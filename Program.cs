@@ -1,4 +1,12 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using uniPlanner.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("uniPlannerContextConnection") ?? throw new InvalidOperationException("Connection string 'uniPlannerContextConnection' not found.");
+
+builder.Services.AddDbContext<uniPlannerContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<uniPlannerUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<uniPlannerContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
