@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace uniPlanner.Models
+﻿namespace uniPlanner.Models
 {
     public class UniversityInfo
     {
