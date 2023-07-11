@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using uniPlanner.Areas.Identity.Data;
+using uniPlanner.Models;
 
 namespace uniPlanner.Areas.Identity.Data;
 
@@ -19,4 +20,6 @@ public class uniPlannerContext : IdentityDbContext<uniPlannerUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+    public DbSet<uniPlanner.Models.Programmes> Programmes { get; set; } = default!;
 }
