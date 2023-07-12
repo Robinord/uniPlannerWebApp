@@ -10,11 +10,11 @@ using uniPlanner.Models;
 
 namespace uniPlanner.Controllers
 {
-    public class UniversityInfoesController : Controller
+    public class UniversityInfoController : Controller
     {
         private readonly uniPlannerContext _context;
 
-        public UniversityInfoesController(uniPlannerContext context)
+        public UniversityInfoController(uniPlannerContext context)
         {
             _context = context;
         }

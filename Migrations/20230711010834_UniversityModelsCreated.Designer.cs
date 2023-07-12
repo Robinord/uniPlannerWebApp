@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using uniPlanner.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using uniPlanner.Areas.Identity.Data;
 namespace uniPlanner.Migrations
 {
     [DbContext(typeof(uniPlannerContext))]
-    partial class uniPlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20230711010834_UniversityModelsCreated")]
+    partial class UniversityModelsCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -243,7 +246,7 @@ namespace uniPlanner.Migrations
 
                     b.HasIndex("UniProgrammesID");
 
-                    b.ToTable("Programmes", (string)null);
+                    b.ToTable("Programmes");
                 });
 
             modelBuilder.Entity("uniPlanner.Models.UniProgrammes", b =>
@@ -256,7 +259,7 @@ namespace uniPlanner.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("UniProgrammes", (string)null);
+                    b.ToTable("UniProgrammes");
                 });
 
             modelBuilder.Entity("uniPlanner.Models.UniversityInfo", b =>
@@ -295,7 +298,7 @@ namespace uniPlanner.Migrations
 
                     b.HasIndex("UniProgrammesID");
 
-                    b.ToTable("UniversityInfo", (string)null);
+                    b.ToTable("UniversityInfo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
