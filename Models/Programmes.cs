@@ -2,7 +2,7 @@
 {
     public class Programmes
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public required int ID { get; set; }
+        public required string Name { get; set; }
     }
 }

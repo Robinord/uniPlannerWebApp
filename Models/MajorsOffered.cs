@@ -2,9 +2,9 @@
 {
     public class MajorsOffered
     {
-        public int ID { get; set; }
-        public ICollection <UniProgrammes> UniProgrammes { get; set; }
-        public string name { get; set; }
+        public required int ID { get; set; }
+        public required ICollection <UniProgrammes> UniProgrammes { get; set; }
+        public required string name { get; set; }
         public string link { get; set; }
     }
 }
