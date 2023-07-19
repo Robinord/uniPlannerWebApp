@@ -19,7 +19,7 @@ namespace uniPlanner.Controllers
             _context = context;
         }
 
-        // GET: UniProgrammes
+        // GET: UniProgramme
         public async Task<IActionResult> Index()
         {
               return _context.UniProgrammes != null ? 
@@ -27,7 +27,7 @@ namespace uniPlanner.Controllers
                           Problem("Entity set 'uniPlannerContext.UniProgrammes'  is null.");
         }
 
-        // GET: UniProgrammes/Details/5
+        // GET: UniProgramme/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.UniProgrammes == null)
@@ -45,18 +45,18 @@ namespace uniPlanner.Controllers
             return View(uniProgrammes);
         }
 
-        // GET: UniProgrammes/Create
+        // GET: UniProgramme/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: UniProgrammes/Create
+        // POST: UniProgramme/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID")] UniProgrammes uniProgrammes)
+        public async Task<IActionResult> Create([Bind("ID,Link,RankScore")] UniProgrammes uniProgrammes)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace uniPlanner.Controllers
             return View(uniProgrammes);
         }
 
-        // GET: UniProgrammes/Edit/5
+        // GET: UniProgramme/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.UniProgrammes == null)
@@ -83,12 +83,12 @@ namespace uniPlanner.Controllers
             return View(uniProgrammes);
         }
 
-        // POST: UniProgrammes/Edit/5
+        // POST: UniProgramme/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID")] UniProgrammes uniProgrammes)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Link,RankScore")] UniProgrammes uniProgrammes)
         {
             if (id != uniProgrammes.ID)
             {
@@ -118,7 +118,7 @@ namespace uniPlanner.Controllers
             return View(uniProgrammes);
         }
 
-        // GET: UniProgrammes/Delete/5
+        // GET: UniProgramme/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.UniProgrammes == null)
@@ -136,7 +136,7 @@ namespace uniPlanner.Controllers
             return View(uniProgrammes);
         }
 
-        // POST: UniProgrammes/Delete/5
+        // POST: UniProgramme/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

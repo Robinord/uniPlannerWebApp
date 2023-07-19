@@ -11,6 +11,18 @@
     <h4>UniProgrammes</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RankScore)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RankScore)
+        </dd>
     </dl>
     
     <form asp-action="Delete">
